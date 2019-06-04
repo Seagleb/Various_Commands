@@ -1,0 +1,29 @@
+psql -h localhost -d calibration_instruments -U postgres -W
+
+# inserts a row into a table
+INSERT INTO tablename (column1, column2, column3) VALUES ('value1', 'value2', 'value3')
+
+# Returns values from a table
+SELECT * FROM Public.table
+
+# Returns column names from a Table
+SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'table'
+
+# Returns highest value from column key in table
+SELECT max(key) FROM table
+
+# Returns a value from col A that matches colb and colc values
+SELECT columnA FROM table WHERE(columnB = 'value') AND (columnC = 'value')
+
+# Delete a row
+DELETE FROM table WHERE(columnA = 'value')
+
+# Most recent entry
+SELECT * FROM table WHERE(colA='value') ORDER BY date DESC LIMIT 1;
+
+# Replace entries in a column
+UPDATE mytable SET colname = REPLACE(colname, 'valuetoreplace', 'newval'
+
+# Restores
+psql -h INSERTHOST -U postgres -d calibration_instruments -f "INSERTFILEPATH"
+psql -h INSERTHOST -U postgres -d calibration_instruments --set ON_ERROR_STOP=on -1 -f "INSERTFILEPATH"  # Includes a single transaction or roll back, and error stop

@@ -1,0 +1,21 @@
+# Find text within files in any subdirectory of a path
+grep -rnw '/path/to/somewhere/' -e 'pattern'
+-r recursive
+-n line number
+-w match whole word
+-l lowercase
+-h no filename
+
+# Find directory/file in any subdirectory of a path
+find startpath -name file
+
+# Loop a command
+watch -n timeinseconds command
+
+# For Display Servers
+export DISPLAY=:0
+
+# Find location of a command
+which
+
+

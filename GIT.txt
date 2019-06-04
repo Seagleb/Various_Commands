@@ -1,0 +1,37 @@
+# Moves from commit to local checked in of that branch
+git reset --soft HEAD^
+
+# Destroys it from commit
+git reset --hard HEAD 
+
+# See remote branches
+git ls-remote
+
+# Lists configs
+git config --list
+
+# Change configs
+git config --global user.name "John Doe"
+git config --global user.email "Email@Email.com"
+
+# Stages modified only files
+git add -u # adds only modified to staging
+
+# Retrieves tags and removes local tags not in remote
+git fetch --all --tags --prune
+
+# Lists tags
+git tag 
+
+# Creates a tag
+git tag name 
+
+# Checks out a tag branch by tag name
+git checkout tags/TAGNAME 
+git checkout tagname
+
+# Tells you which tag you are on, plus how many commits past if you aren't exactly on
+git describe --tags
+
+# Tells you exact tag you are on, and if you aren't on one exactly
+git describe --exact-match --tags $(git log -n1 --pretty='%h') 
