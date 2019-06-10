@@ -1,3 +1,9 @@
+# Initial creation of a git repo
+git init
+create a repo on github
+git remote add origin git@github.com:username/new_repo
+git push -u origin master
+
 # Moves from commit to local checked in of that branch
 git reset --soft HEAD^
 
@@ -34,4 +40,8 @@ git checkout tagname
 git describe --tags
 
 # Tells you exact tag you are on, and if you aren't on one exactly
-git describe --exact-match --tags $(git log -n1 --pretty='%h') 
+git describe --exact-match --tags $(git log -n1 --pretty='%h')
+
+# Generate SSH Keys to prevent having to do password
+ssh-keygen
+ssh-copy-id user@server.com
