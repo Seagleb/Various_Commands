@@ -18,4 +18,23 @@ export DISPLAY=:0
 # Find location of a command
 which
 
+# Which Network File out of the 500?
+/etc/network/interfaces
+auto enp1s0f1
+ifcase enp1s0f1 inet static
+	address 10.1.10.1
+	netmask 255.255.255.0
+	gateway 10.1.0.1
+	network 10.0.0.0
+	metric 101
 
+not /etc/networks
+not /etc/NetworkManager/NetworkManager.conf
+not /etc/dhcp/dhclient.conf
+Yeesh
+
+# Callable Scripts
+/usr/bin
+
+# Auto-Call on Boot Scripts
+/etc/rc.local

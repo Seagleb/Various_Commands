@@ -22,7 +22,7 @@ DELETE FROM table WHERE(columnA = 'value')
 SELECT * FROM table WHERE(colA='value') ORDER BY date DESC LIMIT 1;
 
 # Replace entries in a column
-UPDATE mytable SET colname = REPLACE(colname, 'valuetoreplace', 'newval'
+UPDATE mytable SET colname = REPLACE(colname, 'valuetoreplace', 'newval')
 
 # Restores
 psql -h INSERTHOST -U postgres -d calibration_instruments -f "INSERTFILEPATH"
