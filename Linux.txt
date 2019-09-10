@@ -38,3 +38,31 @@ Yeesh
 
 # Auto-Call on Boot Scripts
 /etc/rc.local
+
+# Edit Bash Startup Preferences
+~/.bashrc
+	export DISPLAY=localhost:0 (for SSH client through WSL)
+	export TERM=xterm-256color
+
+# Edit SSH Preferences (Allows X Forwarding to)
+/etc/ssh/sshd_config
+	X11Forwarding yes
+	X11UseLocalhost no
+	AllowAgentForwarding yes
+	X11DisplayOffset 10
+
+# Gives you who is connected to the PC
+netstat -an | grep ESTABLISHED
+
+# Echo or cat something AS IS
+cat << 'EOF' >> file.txt
+	enter line without quotes being killed
+	mores lines without quotes being killed
+EOF # To end
+
+# Bump up CPU Usage
+cat /dev/zero > /dev/null &
+killall cat
+
+SSHFS
+sudo sshfs -o allow_other,IdentityFile=~/.ssh/id_rsa cal@cs01-teststand.somat.com: /home/dlee/work/cs01-gitbox

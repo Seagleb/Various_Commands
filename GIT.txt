@@ -45,3 +45,9 @@ git describe --exact-match --tags $(git log -n1 --pretty='%h')
 # Generate SSH Keys to prevent having to do password
 ssh-keygen
 ssh-copy-id user@server.com
+
+# Archive just the files from git
+git archive --format zip --output ~/xrbrg-production-test.zip staging
+
+# Archive diff between commits
+git archive --output=<file> HEAD $(git diff --name-only commit1SHA commit2SHA)
