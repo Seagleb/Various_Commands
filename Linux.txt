@@ -12,8 +12,9 @@ find startpath -name file
 # Loop a command
 watch -n timeinseconds command
 
-# For Display Servers
-export DISPLAY=:0
+# For Display Servers on Remote
+ssh -Y root@remoteip
+export DISPLAY=hostip:0
 
 # Find location of a command
 which
@@ -66,3 +67,20 @@ killall cat
 
 SSHFS
 sudo sshfs -o allow_other,IdentityFile=~/.ssh/id_rsa cal@cs01-teststand.somat.com: /home/dlee/work/cs01-gitbox
+
+# Set IP to read from XR
+sudo ifconfig 192.168.100.102 netmask 255.255.255.0 "anything other than 101"
+internet browser to 101
+
+# Various Neat Info
+dbus-monitor --system
+dmesg
+lspci
+lspci -t
+
+# Proper SCP
+scp -r location username@host:path
+	-r recursive directory copy
+
+# Get OS Info
+lsb_release -a
