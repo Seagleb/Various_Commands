@@ -63,14 +63,8 @@ EOF # To end
 
 # Bump up CPU Usage
 cat /dev/zero > /dev/null &
+# Finish
 killall cat
-
-SSHFS
-sudo sshfs -o allow_other,IdentityFile=~/.ssh/id_rsa cal@cs01-teststand.somat.com: /home/dlee/work/cs01-gitbox
-
-# Set IP to read from XR
-sudo ifconfig 192.168.100.102 netmask 255.255.255.0 "anything other than 101"
-internet browser to 101
 
 # Various Neat Info
 dbus-monitor --system
